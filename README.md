@@ -1,16 +1,31 @@
 # README
 
 
-## Outline of project
+---
+
+[1. Overview](#overview)
+
+[2. Data](#data)
+
+[3. Model](#model)
+
+[4. Conclusions and next steps](#concl)
+
+
+---
+
+## <a name="overview">Overview </a>
 
 This project examines  differences in respondents'  assessments of healthcare quality and access, to assess if these varied by immigration history and ethnicity, using a multilevel model to examine differences between health regions. Specifically, I use data from the Canadian Community Health Survey (CCHS) to explore whether certain population groups are more/less adequately served by healthcare service options in Canada, using a multilevel model to account for possible differences in healthcare between health regions.
 
 This script was used to create a model and findings which informed a report.
 
+
+
+## <a name="data">Data </a>
+
 The Canadian Community Health Survey (CCHS) can be accessed through the University of Toronto here: 
 http://sda.chass.utoronto.ca.myaccess.library.utoronto.ca/sdaweb/html/cchs.htm (CHASS Microdata Analysis and Subsetting with SDA, Faculty of Arts & Sciences, University of Toronto)
-
-## Cleaning data and EDA
 
 This data set has 63522 observations, which are distributed among 97 simplified health regions. My final model considered following variables:
 
@@ -23,7 +38,7 @@ This data set has 63522 observations, which are distributed among 97 simplified 
       ucn_010  : Unmet healthcare needs - self-perceived (Binary: y/n)
 
 
-## Fitting the model
+## <a name="model">Model </a>
 
 The script follows these steps:
 - Preliminary phase: Cluster- or grand-mean centering variables. 
@@ -44,7 +59,7 @@ Based on our results in Step 2, we add a term to account for the slope of the gr
 
 Having centered the variables, we interpret the OR value for *sdcfimm_gmc* to mean that survey respondents who indicated they were immigrants were 1.07 times more likely to report unmet healthcare needs. We note that the value 1 is contained in the 95% confidence interval for *sdcfimm_gmc*, so we conclude that we cannot reject the null statement of our stated hypothesis. In other words, we do not conclude any significant effects of respondents' immigration history on their reported unmet healthcare needs.
 
-## Conclusions and next steps:
+## <a name="concl">Conclusions and next steps </a>
 
 The model included terms relating to respondents' reported mental health and whether or not they were immigrants as fixed effects, a random slope term for *sdcfimm*, and included no level-2 variables (and thus no interaction terms with level 2 variables).
 
